@@ -1,0 +1,63 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3
+      author: you
+      changes:
+        - createTable:
+            tableName: forecast
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: date
+                  type: DATE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: TIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: day_of_week
+                  type: SMALLINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: temperature
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: precipitation
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: pop
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: wind_speed
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: clouds
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city_id
+                  type: BIGINT
+        - addForeignKeyConstraint:
+            baseTableName: forecast
+            baseColumnNames: city_id
+            referencedTableName: city
+            referencedColumnNames: id
+            constraintName: fk_forecast_city

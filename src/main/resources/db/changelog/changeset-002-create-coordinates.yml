@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2
+      author: you
+      changes:
+        - createTable:
+            tableName: coordinates
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: lon
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: lat
+                  type: DOUBLE
+                  constraints:
+                    nullable: false
+              - column:
+                  name: city_id
+                  type: BIGINT
+        - addForeignKeyConstraint:
+            baseTableName: coordinates
+            baseColumnNames: city_id
+            referencedTableName: city
+            referencedColumnNames: id
+            constraintName: fk_coordinates_city
