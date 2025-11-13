@@ -20,13 +20,12 @@ public class TelegramBotRegistrar {
 
     @PostConstruct
     public void startBot() {
-        try(TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication();) {
+        try {
+            TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication();
             botsApplication.registerBot(botToken, weatherTelegramBot);
             System.out.println("✅ Telegram bot started successfully!");
         } catch (TelegramApiException e) {
             System.err.println("❌ Failed to start Telegram bot: " + e.getMessage());
-        } catch (Exception e) {
-            throw new RuntimeException(e);
         }
     }
 }
