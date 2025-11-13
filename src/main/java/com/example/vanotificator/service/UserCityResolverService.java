@@ -1,6 +1,7 @@
 package com.example.vanotificator.service;
 
 import com.example.vanotificator.dto.CityCreateDto;
+import com.example.vanotificator.dto.CityDto;
 import com.example.vanotificator.dto.TelegramUserUpdateDto;
 import com.example.vanotificator.dto.UserDataRequestDto;
 import com.example.vanotificator.exeption.CityNotFoundException;
@@ -28,12 +29,21 @@ public class UserCityResolverService {
         } catch (CityNotFoundException e) {
             String name = requestService.getGeoData(dto.getLat(), dto.getLon()).getCityName();
 
-            CityCreateDto cityCreateDto = new CityCreateDto();
-            cityCreateDto.setName(name);
-            cityCreateDto.setLat(dto.getLat());
-            cityCreateDto.setLon(dto.getLon());
+            CityDto city = cityService.getCityByName(name);
 
-            cityName = cityService.createCity(cityCreateDto).getName();
+            if(city == null) {
+                CityCreateDto cityCreateDto = new CityCreateDto();
+                cityCreateDto.setName(name);
+                cityCreateDto.setLat(dto.getLat());
+                cityCreateDto.setLon(dto.getLon());
+                cityName = cityService.createCity(cityCreateDto).getName();
+            } else {
+                cityName = cityService.updateCityCoordinates(
+                        city.getName(),
+                        dto.getLat(),
+                        dto.getLon()).getName();
+            }
+
         }
         setCityIfNotExist(dto.getChatId(), cityName);
         return cityName;
