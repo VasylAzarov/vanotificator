@@ -35,10 +35,14 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
 
     @Override
     public void consume(Update update) {
-        if (update.hasMessage() && update.getMessage().hasText()) {
-            handleTextMessage(update);
-        } else if (update.hasMessage() && update.getMessage().hasLocation()) {
-            handleLocation(update);
+        try {
+            if (update.hasMessage() && update.getMessage().hasText()) {
+                handleTextMessage(update);
+            } else if (update.hasMessage() && update.getMessage().hasLocation()) {
+                handleLocation(update);
+            }
+        } catch (Exception e) {
+            System.err.println("⚠️ Error processing update: " + e.getMessage());
         }
     }
 
@@ -71,7 +75,6 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
         sendMessage(chatId, response);
     }
 
-
     private void sendWelcomeMessage(Long chatId) {
         SendMessage message = new SendMessage(chatId.toString(),
                 "👋 Welcome! Please share your location to get a weather forecast.");
@@ -84,20 +87,19 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
         keyboard.setResizeKeyboard(true);
 
         message.setReplyMarkup(keyboard);
-
-        try {
-            telegramClient.execute(message);
-        } catch (TelegramApiException e) {
-            e.printStackTrace();
-        }
+        executeSafe(message);
     }
 
     private void sendMessage(Long chatId, String text) {
         SendMessage message = new SendMessage(chatId.toString(), text);
+        executeSafe(message);
+    }
+
+    private void executeSafe(SendMessage message) {
         try {
             telegramClient.execute(message);
         } catch (TelegramApiException e) {
-            e.printStackTrace();
+            System.err.println("⚠️ Telegram API error for chat " + message.getChatId() + ": " + e.getMessage());
         }
     }
 }
