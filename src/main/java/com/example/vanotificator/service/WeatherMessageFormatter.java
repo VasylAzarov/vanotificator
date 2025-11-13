@@ -11,11 +11,7 @@ import java.util.Locale;
 @Service
 public class WeatherMessageFormatter {
 
-    private final WeatherUtil weatherUtil;
 
-    public WeatherMessageFormatter(WeatherUtil weatherUtil) {
-        this.weatherUtil = weatherUtil;
-    }
 
     public String formatCurrentForecast(ForecastDto forecast) {
         DayOfWeek dayOfWeekToday =
@@ -27,19 +23,19 @@ public class WeatherMessageFormatter {
         double temperature =
                 forecast.getTemperature();
         String temperatureLvl =
-                weatherUtil.getTemperatureLvl(temperature)
+                WeatherUtil.getTemperatureLvl(temperature)
                         .name()
                         .toLowerCase();
         String precipitationProbability =
-                weatherUtil.getPrecipitationProbability(forecast.getPop())
+                WeatherUtil.getPrecipitationProbability(forecast.getPop())
                         .name()
                         .toLowerCase();
         String windLvl =
-                weatherUtil.getWindLvl(forecast.getWindSpeed())
+                WeatherUtil.getWindLvl(forecast.getWindSpeed())
                         .name()
                         .toLowerCase();
         String cloudCoveredge =
-                weatherUtil.getCloudCoveredge(forecast.getClouds())
+                WeatherUtil.getCloudCoveredge(forecast.getClouds())
                         .name()
                         .toLowerCase();
         StringBuilder sb = new StringBuilder();
@@ -61,7 +57,7 @@ public class WeatherMessageFormatter {
 
         if (!precipitationProbability.equals("no")) {
             String precipitationLvl =
-                    weatherUtil.getPrecipitationLvl(forecast.getPrecipitation())
+                    WeatherUtil.getPrecipitationLvl(forecast.getPrecipitation())
                             .name()
                             .toLowerCase();
             sb.append("Precipitation level: ")

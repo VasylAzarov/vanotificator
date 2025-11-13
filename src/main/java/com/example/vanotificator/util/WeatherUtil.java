@@ -1,11 +1,8 @@
 package com.example.vanotificator.util;
 
-import org.springframework.stereotype.Service;
-
-@Service
 public class WeatherUtil {
 
-    public Probability getPrecipitationProbability(double pop) {
+    public static Probability getPrecipitationProbability(double pop) {
         if (pop == 0.0) {
             return Probability.NO;
         }
@@ -18,7 +15,7 @@ public class WeatherUtil {
         return Probability.HIGH;
     }
 
-    public Lvl getWindLvl(double windSpeed) {
+    public static Lvl getWindLvl(double windSpeed) {
         if (windSpeed <= 1.5) {
             return Lvl.CALM;
         }
@@ -31,7 +28,7 @@ public class WeatherUtil {
         return Lvl.STRONG;
     }
 
-    public Lvl getPrecipitationLvl(double precipitation) {
+    public static Lvl getPrecipitationLvl(double precipitation) {
         if (precipitation <= 0.1) {
             return Lvl.CALM;
         }
@@ -44,7 +41,7 @@ public class WeatherUtil {
         return Lvl.STRONG;
     }
 
-    public Temperature getTemperatureLvl(double temperature) {
+    public static Temperature getTemperatureLvl(double temperature) {
         if (temperature <= -21) {
             return Temperature.EXTREMELY_COLD;
         }
@@ -78,7 +75,7 @@ public class WeatherUtil {
         return Temperature.HOT;
     }
 
-    public CloudCoveredge getCloudCoveredge(int clouds) {
+    public static CloudCoveredge getCloudCoveredge(int clouds) {
         if (clouds <= 25) {
             return CloudCoveredge.CLEAR;
         }

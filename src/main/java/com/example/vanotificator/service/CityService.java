@@ -49,9 +49,12 @@ public class CityService {
     public CityDto createCity(CityCreateDto cityCreateDto) {
         City city = new City();
 
+        double lat = roundCoordinate(cityCreateDto.getLat());
+        double lon = roundCoordinate(cityCreateDto.getLon());
+
         Coordinates coordinates = new Coordinates();
-        coordinates.setLat(cityCreateDto.getLat());
-        coordinates.setLon(cityCreateDto.getLon());
+        coordinates.setLat(lat);
+        coordinates.setLon(lon);
         coordinates.setCity(city);
 
         city.setName(cityCreateDto.getName().toLowerCase());
