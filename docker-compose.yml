@@ -11,8 +11,6 @@ services:
       - .env
     ports:
       - "8080:8080"
-    depends_on:
-      - postgres
     healthcheck:
       test: [ "CMD-SHELL", "curl -f http://localhost:8080 || exit 1" ]
       interval: 30s
