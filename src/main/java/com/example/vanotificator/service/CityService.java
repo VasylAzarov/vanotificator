@@ -12,6 +12,8 @@ import com.example.vanotificator.repository.CityRepository;
 import com.example.vanotificator.util.CityNameNormalizer;
 import com.example.vanotificator.util.CityUtil;
 import jakarta.transaction.Transactional;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.event.EventListener;
@@ -28,6 +30,8 @@ import java.util.stream.Collectors;
 @Service
 @Transactional
 public class CityService {
+
+    private static final Logger log = LoggerFactory.getLogger(CityService.class);
 
     private final CityReaderService cityReaderService;
     private final CityRepository cityRepository;
@@ -51,7 +55,9 @@ public class CityService {
 
     @EventListener(ApplicationReadyEvent.class)
     public void init() {
+        log.info("Start cities initialization...");
         updateCitiesFromFile();
+        log.info("Cities initialization is complete!");
         publisher.publishEvent(new CitiesInitializedEvent(this));
     }
 

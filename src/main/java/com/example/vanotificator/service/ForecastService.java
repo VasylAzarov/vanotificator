@@ -47,7 +47,10 @@ public class ForecastService {
     @Async
     @EventListener
     public void onCitiesInitialized(CitiesInitializedEvent event) {
+        log.info("Start updating forecasts for cities...");
         generateForecasts();
+        log.info("Updating forecasts for cities is complete!");
+
     }
 
     public void updateForecasts(List<WeatherResponseDto> weatherResponseDtos) {
