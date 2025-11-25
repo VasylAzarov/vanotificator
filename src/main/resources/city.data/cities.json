@@ -1,0 +1,524 @@
+[
+  {
+    "name": "Tirana",
+    "lat": 41.3275,
+    "lon": 19.8189,
+    "timezone": 3600
+  },
+  {
+    "name": "Andorra la Vella",
+    "lat": 42.5078,
+    "lon": 1.5211,
+    "timezone": 3600
+  },
+  {
+    "name": "Yerevan",
+    "lat": 40.1872,
+    "lon": 44.5152,
+    "timezone": 14400
+  },
+  {
+    "name": "Vienna",
+    "lat": 48.2083,
+    "lon": 16.3725,
+    "timezone": 3600
+  },
+  {
+    "name": "Baku",
+    "lat": 40.4093,
+    "lon": 49.8671,
+    "timezone": 14400
+  },
+  {
+    "name": "Minsk",
+    "lat": 53.9000,
+    "lon": 27.5667,
+    "timezone": 10800
+  },
+  {
+    "name": "Brussels",
+    "lat": 50.8503,
+    "lon": 4.3517,
+    "timezone": 3600
+  },
+  {
+    "name": "Sarajevo",
+    "lat": 43.8563,
+    "lon": 18.4131,
+    "timezone": 3600
+  },
+  {
+    "name": "Sofia",
+    "lat": 42.6977,
+    "lon": 23.3219,
+    "timezone": 7200
+  },
+  {
+    "name": "Zagreb",
+    "lat": 45.8150,
+    "lon": 15.9819,
+    "timezone": 3600
+  },
+  {
+    "name": "Nicosia",
+    "lat": 35.1856,
+    "lon": 33.3823,
+    "timezone": 7200
+  },
+  {
+    "name": "Prague",
+    "lat": 50.0755,
+    "lon": 14.4378,
+    "timezone": 3600
+  },
+  {
+    "name": "Copenhagen",
+    "lat": 55.6761,
+    "lon": 12.5683,
+    "timezone": 3600
+  },
+  {
+    "name": "Tallinn",
+    "lat": 59.4370,
+    "lon": 24.7536,
+    "timezone": 7200
+  },
+  {
+    "name": "Helsinki",
+    "lat": 60.1695,
+    "lon": 24.9354,
+    "timezone": 10800
+  },
+  {
+    "name": "Paris",
+    "lat": 48.8566,
+    "lon": 2.3522,
+    "timezone": 3600
+  },
+  {
+    "name": "Tbilisi",
+    "lat": 41.7151,
+    "lon": 44.8271,
+    "timezone": 14400
+  },
+  {
+    "name": "Berlin",
+    "lat": 52.5200,
+    "lon": 13.4050,
+    "timezone": 3600
+  },
+  {
+    "name": "Athens",
+    "lat": 37.9838,
+    "lon": 23.7275,
+    "timezone": 7200
+  },
+  {
+    "name": "Budapest",
+    "lat": 47.4979,
+    "lon": 19.0402,
+    "timezone": 3600
+  },
+  {
+    "name": "Reykjavik",
+    "lat": 64.1355,
+    "lon": -21.8954,
+    "timezone": 0
+  },
+  {
+    "name": "Dublin",
+    "lat": 53.3331,
+    "lon": -6.2489,
+    "timezone": 0
+  },
+  {
+    "name": "Rome",
+    "lat": 41.9028,
+    "lon": 12.4964,
+    "timezone": 3600
+  },
+  {
+    "name": "Astana",
+    "lat": 51.1605,
+    "lon": 71.4704,
+    "timezone": 21600
+  },
+  {
+    "name": "Pristina",
+    "lat": 42.6629,
+    "lon": 21.1655,
+    "timezone": 3600
+  },
+  {
+    "name": "Riga",
+    "lat": 56.9496,
+    "lon": 24.1052,
+    "timezone": 7200
+  },
+  {
+    "name": "Vaduz",
+    "lat": 47.1410,
+    "lon": 9.5215,
+    "timezone": 3600
+  },
+  {
+    "name": "Vilnius",
+    "lat": 54.6872,
+    "lon": 25.2797,
+    "timezone": 7200
+  },
+  {
+    "name": "Luxembourg",
+    "lat": 49.6117,
+    "lon": 6.1319,
+    "timezone": 3600
+  },
+  {
+    "name": "Valletta",
+    "lat": 35.8997,
+    "lon": 14.5146,
+    "timezone": 3600
+  },
+  {
+    "name": "Chisinau",
+    "lat": 47.0105,
+    "lon": 28.8638,
+    "timezone": 7200
+  },
+  {
+    "name": "Monaco",
+    "lat": 43.7384,
+    "lon": 7.4246,
+    "timezone": 3600
+  },
+  {
+    "name": "Podgorica",
+    "lat": 42.4410,
+    "lon": 19.2620,
+    "timezone": 3600
+  },
+  {
+    "name": "Amsterdam",
+    "lat": 52.3676,
+    "lon": 4.9041,
+    "timezone": 3600
+  },
+  {
+    "name": "Skopje",
+    "lat": 41.9981,
+    "lon": 21.4254,
+    "timezone": 3600
+  },
+  {
+    "name": "Oslo",
+    "lat": 59.9139,
+    "lon": 10.7522,
+    "timezone": 3600
+  },
+  {
+    "name": "Krakow",
+    "lat": 50.0647,
+    "lon": 19.9450,
+    "timezone": 3600
+  },
+  {
+    "name": "Lodz",
+    "lat": 51.7592,
+    "lon": 19.4560,
+    "timezone": 3600
+  },
+  {
+    "name": "Wroclaw",
+    "lat": 51.1079,
+    "lon": 17.0385,
+    "timezone": 3600
+  },
+  {
+    "name": "Poznan",
+    "lat": 52.4064,
+    "lon": 16.9252,
+    "timezone": 3600
+  },
+  {
+    "name": "Gdansk",
+    "lat": 54.3520,
+    "lon": 18.6466,
+    "timezone": 3600
+  },
+  {
+    "name": "Szczecin",
+    "lat": 53.4285,
+    "lon": 14.5528,
+    "timezone": 3600
+  },
+  {
+    "name": "Bydgoszcz",
+    "lat": 53.1235,
+    "lon": 18.0084,
+    "timezone": 3600
+  },
+  {
+    "name": "Lublin",
+    "lat": 51.2465,
+    "lon": 22.5684,
+    "timezone": 3600
+  },
+  {
+    "name": "Bialystok",
+    "lat": 53.1325,
+    "lon": 23.1688,
+    "timezone": 3600
+  },
+  {
+    "name": "Katowice",
+    "lat": 50.2649,
+    "lon": 19.0238,
+    "timezone": 3600
+  },
+  {
+    "name": "Rzeszow",
+    "lat": 50.0413,
+    "lon": 21.9990,
+    "timezone": 3600
+  },
+  {
+    "name": "Olsztyn",
+    "lat": 53.7784,
+    "lon": 20.4801,
+    "timezone": 3600
+  },
+  {
+    "name": "Kielce",
+    "lat": 50.8661,
+    "lon": 20.6286,
+    "timezone": 3600
+  },
+  {
+    "name": "Zielona Gora",
+    "lat": 51.9355,
+    "lon": 15.5062,
+    "timezone": 3600
+  },
+  {
+    "name": "Opole",
+    "lat": 50.6751,
+    "lon": 17.9213,
+    "timezone": 3600
+  },
+  {
+    "name": "Lisbon",
+    "lat": 38.7169,
+    "lon": -9.1396,
+    "timezone": 0
+  },
+  {
+    "name": "Bucharest",
+    "lat": 44.4328,
+    "lon": 26.1043,
+    "timezone": 7200
+  },
+  {
+    "name": "San Marino",
+    "lat": 43.9336,
+    "lon": 12.4545,
+    "timezone": 3600
+  },
+  {
+    "name": "Belgrade",
+    "lat": 44.8176,
+    "lon": 20.4569,
+    "timezone": 3600
+  },
+  {
+    "name": "Bratislava",
+    "lat": 48.1486,
+    "lon": 17.1077,
+    "timezone": 3600
+  },
+  {
+    "name": "Ljubljana",
+    "lat": 46.0569,
+    "lon": 14.5058,
+    "timezone": 3600
+  },
+  {
+    "name": "Madrid",
+    "lat": 40.4168,
+    "lon": -3.7038,
+    "timezone": 3600
+  },
+  {
+    "name": "Stockholm",
+    "lat": 59.3293,
+    "lon": 18.0686,
+    "timezone": 3600
+  },
+  {
+    "name": "Bern",
+    "lat": 46.9481,
+    "lon": 7.4474,
+    "timezone": 3600
+  },
+  {
+    "name": "Ankara",
+    "lat": 39.9334,
+    "lon": 32.8597,
+    "timezone": 10800
+  },
+  {
+    "name": "Kyiv",
+    "lat": 50.4501,
+    "lon": 30.5234,
+    "timezone": 7200
+  },
+  {
+    "name": "Vinnytsia",
+    "lat": 49.2331,
+    "lon": 28.4682,
+    "timezone": 7200
+  },
+  {
+    "name": "Lutsk",
+    "lat": 50.7472,
+    "lon": 25.3254,
+    "timezone": 7200
+  },
+  {
+    "name": "Dnipro",
+    "lat": 48.4647,
+    "lon": 35.0462,
+    "timezone": 7200
+  },
+  {
+    "name": "Donetsk",
+    "lat": 48.0159,
+    "lon": 37.8029,
+    "timezone": 7200
+  },
+  {
+    "name": "Zhytomyr",
+    "lat": 50.2547,
+    "lon": 28.6587,
+    "timezone": 7200
+  },
+  {
+    "name": "Uzhhorod",
+    "lat": 48.6208,
+    "lon": 22.2879,
+    "timezone": 7200
+  },
+  {
+    "name": "Zaporizhzhia",
+    "lat": 47.8388,
+    "lon": 35.1396,
+    "timezone": 7200
+  },
+  {
+    "name": "Ivano-Frankivsk",
+    "lat": 48.9226,
+    "lon": 24.7111,
+    "timezone": 7200
+  },
+  {
+    "name": "Kropyvnytskyi",
+    "lat": 48.5137,
+    "lon": 32.2597,
+    "timezone": 7200
+  },
+  {
+    "name": "Luhansk",
+    "lat": 48.5740,
+    "lon": 39.3078,
+    "timezone": 7200
+  },
+  {
+    "name": "Lviv",
+    "lat": 49.8397,
+    "lon": 24.0297,
+    "timezone": 7200
+  },
+  {
+    "name": "Mykolaiv",
+    "lat": 46.9750,
+    "lon": 31.9946,
+    "timezone": 7200
+  },
+  {
+    "name": "Odessa",
+    "lat": 46.4825,
+    "lon": 30.7233,
+    "timezone": 7200
+  },
+  {
+    "name": "Poltava",
+    "lat": 49.5883,
+    "lon": 34.5514,
+    "timezone": 7200
+  },
+  {
+    "name": "Rivne",
+    "lat": 50.6199,
+    "lon": 26.2516,
+    "timezone": 7200
+  },
+  {
+    "name": "Sumy",
+    "lat": 50.9077,
+    "lon": 34.7981,
+    "timezone": 7200
+  },
+  {
+    "name": "Ternopil",
+    "lat": 49.5535,
+    "lon": 25.5948,
+    "timezone": 7200
+  },
+  {
+    "name": "Kharkiv",
+    "lat": 49.9935,
+    "lon": 36.2304,
+    "timezone": 7200
+  },
+  {
+    "name": "Kherson",
+    "lat": 46.6354,
+    "lon": 32.6169,
+    "timezone": 7200
+  },
+  {
+    "name": "Khmelnytskyi",
+    "lat": 49.4212,
+    "lon": 26.9960,
+    "timezone": 7200
+  },
+  {
+    "name": "Cherkasy",
+    "lat": 49.4444,
+    "lon": 32.0598,
+    "timezone": 7200
+  },
+  {
+    "name": "Chernivtsi",
+    "lat": 48.2915,
+    "lon": 25.9403,
+    "timezone": 7200
+  },
+  {
+    "name": "Chernihiv",
+    "lat": 51.5055,
+    "lon": 31.2849,
+    "timezone": 7200
+  },
+  {
+    "name": "London",
+    "lat": 51.5074,
+    "lon": -0.1278,
+    "timezone": 0
+  },
+  {
+    "name": "Vatican City",
+    "lat": 41.9029,
+    "lon": 12.4534,
+    "timezone": 3600
+  }
+]

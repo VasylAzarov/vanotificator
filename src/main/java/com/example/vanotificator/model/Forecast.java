@@ -1,11 +1,6 @@
 package com.example.vanotificator.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.Data;
 
 import java.time.DayOfWeek;
@@ -16,7 +11,10 @@ import java.time.LocalTime;
 @Data
 public class Forecast {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "forecast_seq")
+    @SequenceGenerator(
+            name = "forecast_seq",
+            sequenceName = "forecast_seq")
     private Long id;
 
     @Column(nullable = false)

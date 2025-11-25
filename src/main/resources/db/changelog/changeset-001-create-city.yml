@@ -3,13 +3,17 @@ databaseChangeLog:
       id: 1
       author: you
       changes:
+        - createSequence:
+            sequenceName: city_seq
+            startValue: 1
+            incrementBy: 50
         - createTable:
             tableName: city
             columns:
               - column:
                   name: id
                   type: BIGINT
-                  autoIncrement: true
+                  defaultValueSequenceNext: city_seq
                   constraints:
                     primaryKey: true
               - column:

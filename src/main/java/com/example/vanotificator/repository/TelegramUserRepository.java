@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface TelegramUserRepository extends JpaRepository<TelegramUser, Integer> {
+public interface TelegramUserRepository extends JpaRepository<TelegramUser, Long> {
 
     boolean existsByChatId(long chatId);
 

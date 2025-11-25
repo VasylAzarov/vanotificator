@@ -1,6 +1,8 @@
 package com.example.vanotificator.notification;
 
 import jakarta.annotation.PostConstruct;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.telegram.telegrambots.longpolling.TelegramBotsLongPollingApplication;
@@ -8,6 +10,8 @@ import org.telegram.telegrambots.meta.exceptions.TelegramApiException;
 
 @Component
 public class TelegramBotRegistrar {
+
+    private static final Logger log = LoggerFactory.getLogger(TelegramBotRegistrar.class);
 
     private final WeatherTelegramBot weatherTelegramBot;
     private final String botToken;
@@ -23,9 +27,9 @@ public class TelegramBotRegistrar {
         try {
             TelegramBotsLongPollingApplication botsApplication = new TelegramBotsLongPollingApplication();
             botsApplication.registerBot(botToken, weatherTelegramBot);
-            System.out.println("✅ Telegram bot started successfully!");
+            log.info("✅ Telegram bot started successfully!");
         } catch (TelegramApiException e) {
-            System.err.println("❌ Failed to start Telegram bot: " + e.getMessage());
+            log.error("❌ Failed to start Telegram bot: {}", e.getMessage());
         }
     }
 }

@@ -2,16 +2,16 @@ package com.example.vanotificator.service;
 
 import com.example.vanotificator.dto.ForecastDto;
 import com.example.vanotificator.util.WeatherUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.time.DayOfWeek;
 import java.time.format.TextStyle;
 import java.util.Locale;
 
+@Slf4j
 @Service
-public class WeatherMessageFormatter {
-
-
+public class WeatherMessageFormatService {
 
     public String formatCurrentForecast(ForecastDto forecast) {
         DayOfWeek dayOfWeekToday =
@@ -38,6 +38,11 @@ public class WeatherMessageFormatter {
                 WeatherUtil.getCloudCoveredge(forecast.getClouds())
                         .name()
                         .toLowerCase();
+
+        if (cloudCoveredge.contains("_")) {
+            cloudCoveredge = cloudCoveredge.replace("_", " ");
+        }
+
         StringBuilder sb = new StringBuilder();
 
         sb.append("Hello, ").append(cityName).append("!\n")

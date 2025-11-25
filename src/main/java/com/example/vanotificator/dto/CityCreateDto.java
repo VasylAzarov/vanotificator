@@ -9,4 +9,6 @@ public class CityCreateDto {
     private double lat;
 
     private double lon;
+
+    private int timezone = 0;
 }

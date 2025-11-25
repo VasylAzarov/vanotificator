@@ -5,6 +5,8 @@ import com.example.vanotificator.dto.WeatherResponseDto;
 import com.example.vanotificator.exeption.ForecastNotFoundException;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class ForecastResolverService {
 
@@ -25,10 +27,11 @@ public class ForecastResolverService {
         } catch (ForecastNotFoundException e) {
             WeatherResponseDto weatherResponseDto
                     = requestService.getWeather(cityName);
-            forecastService.updateForecasts(weatherResponseDto);
+            forecastService.updateForecasts(List.of(weatherResponseDto));
             forecastDto = forecastService
                     .getNearestForecastByCityName(cityName);
         }
+        forecastDto.setCityName(cityName);
         return forecastDto;
     }
 }

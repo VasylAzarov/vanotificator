@@ -3,6 +3,10 @@ databaseChangeLog:
       id: 3
       author: you
       changes:
+        - createSequence:
+            sequenceName: coordinates_seq
+            startValue: 1
+            incrementBy: 50
         - createTable:
             tableName: forecast
             columns:

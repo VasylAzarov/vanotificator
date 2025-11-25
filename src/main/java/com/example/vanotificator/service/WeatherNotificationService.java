@@ -10,18 +10,20 @@ public class WeatherNotificationService {
 
     private final UserCityResolverService cityResolverService;
     private final ForecastResolverService forecastResolverService;
-    private final WeatherMessageFormatter formatter;
+    private final WeatherMessageFormatService formatter;
 
     public WeatherNotificationService(UserCityResolverService cityResolverService,
                                       ForecastResolverService forecastResolverService,
-                                      WeatherMessageFormatter formatter) {
+                                      WeatherMessageFormatService formatter) {
         this.cityResolverService = cityResolverService;
         this.forecastResolverService = forecastResolverService;
         this.formatter = formatter;
     }
 
-    public String buildNearestWeatherMessage(UserDataRequestDto dto) {
-        String cityName = cityResolverService.resolveCityName(dto);
+    public String buildNearestWeatherMessage(UserDataRequestDto dto, String cityName) {
+        if (cityName == null) {
+            cityName = cityResolverService.resolveCityName(dto);
+        }
 
         ForecastDto forecast = forecastResolverService.getNearestForecast(cityName);
 

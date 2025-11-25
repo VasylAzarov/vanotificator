@@ -1,9 +1,6 @@
 package com.example.vanotificator.service;
 
-import com.example.vanotificator.dto.CityCreateDto;
-import com.example.vanotificator.dto.CityDto;
-import com.example.vanotificator.dto.TelegramUserUpdateDto;
-import com.example.vanotificator.dto.UserDataRequestDto;
+import com.example.vanotificator.dto.*;
 import com.example.vanotificator.exeption.CityNotFoundException;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +11,11 @@ public class UserCityResolverService {
     private final CityService cityService;
     private final RequestService requestService;
 
-    public UserCityResolverService(TelegramUserService telegramUserService,
-                                   CityService cityService,
-                                   RequestService requestService) {
+    public UserCityResolverService(
+            TelegramUserService telegramUserService,
+            CityService cityService,
+            RequestService requestService
+    ) {
         this.telegramUserService = telegramUserService;
         this.cityService = cityService;
         this.requestService = requestService;
@@ -27,34 +26,30 @@ public class UserCityResolverService {
         try {
             cityName = cityService.getCityByCoordinates(dto.getLat(), dto.getLon()).getName();
         } catch (CityNotFoundException e) {
-            String name = requestService.getGeoData(dto.getLat(), dto.getLon()).getCityName();
-
-            CityDto city = cityService.getCityByName(name);
-
-            if(city == null) {
-                CityCreateDto cityCreateDto = new CityCreateDto();
-                cityCreateDto.setName(name);
-                cityCreateDto.setLat(dto.getLat());
-                cityCreateDto.setLon(dto.getLon());
-                cityName = cityService.createCity(cityCreateDto).getName();
-            } else {
-                cityName = cityService.updateCityCoordinates(
-                        city.getName(),
-                        dto.getLat(),
-                        dto.getLon()).getName();
+            String detectedName = requestService.getGeoData(dto.getLat(), dto.getLon()).getCityName();
+            try {
+                cityName = cityService.getCityByName(detectedName).getName();
+                cityName = cityService.updateCityCoordinates(cityName, dto.getLat(), dto.getLon()).getName();
+            } catch (CityNotFoundException ignored) {
+                CityCreateDto create = new CityCreateDto();
+                create.setName(detectedName);
+                create.setLat(dto.getLat());
+                create.setLon(dto.getLon());
+                cityName = cityService.createCity(create).getName();
             }
-
         }
+
         setCityIfNotExist(dto.getChatId(), cityName);
         return cityName;
     }
 
     private void setCityIfNotExist(long chatId, String cityName) {
-        if (telegramUserService.getTelegramUserByChatId(chatId).getCityName() == null) {
-            TelegramUserUpdateDto telegramUserUpdateDto = new TelegramUserUpdateDto();
-            telegramUserUpdateDto.setChatId(chatId);
-            telegramUserUpdateDto.setCityName(cityName);
-            telegramUserService.updateUserCity(telegramUserUpdateDto);
+        TelegramUserDto user = telegramUserService.getTelegramUserByChatId(chatId);
+        if (user.getCityName() == null) {
+            TelegramUserUpdateDto update = new TelegramUserUpdateDto();
+            update.setChatId(chatId);
+            update.setCityName(cityName);
+            telegramUserService.updateUserCity(update);
         }
     }
 }
