@@ -16,10 +16,10 @@ import java.util.Set;
 public interface CityRepository extends JpaRepository<City, Long> {
 
     @EntityGraph(attributePaths = {"coordinates"})
-    Optional<City> findByName(String name);
+    Optional<City> findByNameIgnoreCase(String name);
 
     @EntityGraph(attributePaths = {"coordinates"})
-    List<City> findAllByNameIn(Set<String> names);
+    List<City> findAllByNameInIgnoreCase(Set<String> names);
 
     @Query("SELECT c.name FROM City c")
     List<String> findAllCityNames();
@@ -33,6 +33,6 @@ public interface CityRepository extends JpaRepository<City, Long> {
             "SELECT f FROM Forecast f WHERE f.city = c AND f.date = :today)")
     List<String> findCityNamesWithoutForecastForDate(@Param("today") LocalDate today);
 
-
-    @Query("select c.name from City c where lower(c.name) like lower(concat('%', :namePart, '%'))")
-    List<String> findCityNames(@Param("namePart") String namePart);}
+    @Query("SELECT c.name FROM City c WHERE LOWER(c.name) LIKE LOWER(CONCAT('%', :namePart, '%'))")
+    List<String> findCityNames(@Param("namePart") String namePart);
+}

@@ -7,12 +7,12 @@ import java.util.Map;
 @Component
 public class CityNameNormalizer {
     private static final Map<String, String> ALIASES = Map.of(
-            "donji grad", "zagreb",
-            "odesa", "odessa",
-            "kiev", "kyiv",
-            "nur-sultan", "astana",
-            "rīga", "riga",
-            "luxembourg province", "luxembourg"
+            "Donji Grad", "Zagreb",
+            "Odesa", "Odessa",
+            "Kiev", "Kyiv",
+            "Nur-Sultan", "Astana",
+            "Rīga", "Riga",
+            "Luxembourg province", "Luxembourg"
     );
 
     public String normalize(String raw) {

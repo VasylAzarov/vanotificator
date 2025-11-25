@@ -21,10 +21,7 @@ import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
-import java.util.Collection;
-import java.util.List;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 @Service
@@ -63,7 +60,7 @@ public class CityService {
 
     public CityDto getCityByName(String rawName) {
         String normalized = normalizer.normalize(rawName);
-        City city = cityRepository.findByName(normalized)
+        City city = cityRepository.findByNameIgnoreCase(normalized)
                 .orElseThrow(() -> new CityNotFoundException(
                         "City by name: [" + rawName + "] not found!"
                 ));
@@ -72,7 +69,7 @@ public class CityService {
 
     public City getCityEntityByName(String rawName) {
         String normalized = normalizer.normalize(rawName);
-        return cityRepository.findByName(normalized)
+        return cityRepository.findByNameIgnoreCase(normalized)
                 .orElseThrow(() -> new CityNotFoundException(
                         "City by name: [" + rawName + "] not found!"
                 ));
@@ -119,10 +116,9 @@ public class CityService {
         Set<String> normalized = cityNames.stream()
                 .filter(Objects::nonNull)
                 .map(normalizer::normalize)
-                .map(String::toLowerCase)
                 .collect(Collectors.toSet());
 
-        return cityRepository.findAllByNameIn(normalized);
+        return cityRepository.findAllByNameInIgnoreCase(normalized);
     }
 
     public List<String> getCitiesNamesWithoutForecastForDate(LocalDate dateUtc) {
@@ -136,14 +132,13 @@ public class CityService {
     private void updateCitiesFromFile() {
         List<CityCreateDto> dtos = cityReaderService.readCityFromFile();
 
-        Set<String> existing = cityRepository.findAllCityNames().stream()
-                .map(String::toLowerCase).collect(Collectors.toSet());
+        Set<String> existing = new HashSet<>(cityRepository.findAllCityNames());
 
         List<City> toInsert = dtos.stream()
-                .filter(dto -> !existing.contains(dto.getName().toLowerCase()))
+                .filter(dto -> !existing.contains(dto.getName()))
                 .map(dto -> {
                     City city = new City();
-                    city.setName(dto.getName().toLowerCase());
+                    city.setName(dto.getName());
                     city.setTimezone(dto.getTimezone());
 
                     Coordinates coordinates = new Coordinates();

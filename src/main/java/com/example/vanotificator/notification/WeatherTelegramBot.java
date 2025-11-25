@@ -99,7 +99,7 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
     private void handleInlineQuery(InlineQuery inlineQuery) {
         int inlineResultLimit = 25;
         String query = inlineQuery.getQuery();
-        String normalized = query.trim().toLowerCase();
+        String normalized = query.trim();
 
         if (normalized.length() < 12 && !normalized.startsWith("/forecast:")) {
             answerInline(inlineQuery.getId(), List.of());
@@ -118,7 +118,7 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
     private List<InlineQueryResultArticle> buildInlineResults(List<String> cityNames) {
         return cityNames.stream()
                 .map(name -> new InlineQueryResultArticle(
-                        "city_" + name.toLowerCase(),
+                        "city_" + name,
                         name,
                         new InputTextMessageContent("/forecast:" + name)
                 ))
@@ -197,7 +197,7 @@ public class WeatherTelegramBot implements LongPollingSingleThreadUpdateConsumer
 
         SendMessage msg = SendMessage.builder()
                 .chatId(chatId.toString())
-                .text("✍️ Please push the button and start typing city name")
+                .text("✍️ Please, press the button below and start typing city name")
                 .replyMarkup(markup)
                 .build();
         executeSend(msg);

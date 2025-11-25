@@ -12,6 +12,7 @@ import jakarta.transaction.Transactional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
@@ -61,25 +62,30 @@ public class ForecastService {
 
     public ForecastDto getNearestForecastByCityName(String cityName) {
         LocalDate today = LocalDate.now(ZoneOffset.UTC);
-        Forecast forecast = forecastRepository
-                .findFirstByCity_NameAndDateGreaterThanEqualOrderByDateAscTimeAsc(cityName, today)
-                .orElseThrow(() -> new ForecastNotFoundException(
-                        "Forecast by city name: [" + cityName + "] not found!"
-                ));
-        return forecastMapper.toDto(forecast);
+        List<Forecast> forecasts = forecastRepository
+                .findForecastsAfterDate(cityName,
+                        today,
+                        PageRequest.of(0, 1));
+        if  (forecasts.isEmpty()) {
+            throw new ForecastNotFoundException(
+                    "Forecast by city name: [" + cityName + "] not found!"
+            );
+        } else {
+            return forecastMapper.toDto(forecasts.get(0));
+        }
     }
 
     public List<ForecastDto> getDailyForecastByCityName(String cityName) {
         LocalDate todayUtc = LocalDate.now(ZoneOffset.UTC);
         return forecastMapper.toDto(
-                forecastRepository.findByCity_NameAndDate(cityName, todayUtc)
+                forecastRepository.findByCity_NameIgnoreCaseAndDate(cityName, todayUtc)
         );
     }
 
     public List<ForecastDto> getWeeklyForecastByCityName(String cityName) {
         LocalDate until = LocalDate.now(ZoneOffset.UTC).plusDays(7);
         return forecastMapper.toDto(
-                forecastRepository.findByCity_NameAndDateBefore(cityName, until)
+                forecastRepository.findByCity_NameIgnoreCaseAndDateBefore(cityName, until)
         );
     }
 
@@ -89,13 +95,13 @@ public class ForecastService {
 
     private List<City> prepareCity(List<WeatherResponseDto> dtos) {
         Map<String, Integer> timezones = dtos.stream().collect(Collectors.toMap(
-                item -> item.getCity().getName().toLowerCase(),
+                item -> item.getCity().getName(),
                 item -> item.getCity().getTimezone()
         ));
         List<String> names = new ArrayList<>(timezones.keySet());
         List<City> cities = cityService.getCityEntityByNamesIn(names);
         for (City city : cities) {
-            Integer tz = timezones.get(city.getName().toLowerCase());
+            Integer tz = timezones.get(city.getName());
             if (tz != null) city.setTimezone(tz);
         }
         return cities;
@@ -103,11 +109,11 @@ public class ForecastService {
 
     private List<Forecast> buildForecastsInUTC(List<WeatherResponseDto> dtos, List<City> cities) {
         Map<String, City> cityMap = cities.stream()
-                .collect(Collectors.toMap(c -> c.getName().toLowerCase(), c -> c));
+                .collect(Collectors.toMap(c -> c.getName(), c -> c));
 
         List<Forecast> all = new ArrayList<>();
         for (WeatherResponseDto dto : dtos) {
-            City city = cityMap.get(dto.getCity().getName().toLowerCase());
+            City city = cityMap.get(dto.getCity().getName());
             if (city == null) continue;
 
             ZoneOffset offset = ZoneOffset.ofTotalSeconds(dto.getCity().getTimezone());
@@ -143,7 +149,7 @@ public class ForecastService {
                 .map(City::getName)
                 .toList();
 
-        forecastRepository.deleteAllByCityInAndDateBetween(cityNames, start, end);
+        forecastRepository.deleteAllByCityInIgnoreCaseAndDateBetween(cityNames, start, end);
 
         forecastRepository.saveAll(forecasts);
     }

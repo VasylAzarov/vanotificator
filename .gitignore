@@ -35,3 +35,4 @@ build/
 .env
 
 docker-compose.yaml
+/src/main/resources/application-local.properties
