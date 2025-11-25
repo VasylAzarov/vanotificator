@@ -35,4 +35,4 @@ public interface CityRepository extends JpaRepository<City, Long> {
 
 
     @Query("select c.name from City c where lower(c.name) like lower(concat('%', :namePart, '%'))")
-    List<String> findCityNames(String namePart);}
+    List<String> findCityNames(@Param("namePart") String namePart);}
