@@ -1,0 +1,611 @@
+[
+  {
+    "name": "Tirana",
+    "locale-name": {
+      "en": "Tirana",
+      "ua": "Тирана"
+    }
+  },
+  {
+    "name": "Andorra la Vella",
+    "locale-name": {
+      "en": "Andorra la Vella",
+      "ua": "Андорра-ла-Велья"
+    }
+  },
+  {
+    "name": "Yerevan",
+    "locale-name": {
+      "en": "Yerevan",
+      "ua": "Єреван"
+    }
+  },
+  {
+    "name": "Vienna",
+    "locale-name": {
+      "en": "Vienna",
+      "ua": "Відень"
+    }
+  },
+  {
+    "name": "Baku",
+    "locale-name": {
+      "en": "Baku",
+      "ua": "Баку"
+    }
+  },
+  {
+    "name": "Minsk",
+    "locale-name": {
+      "en": "Minsk",
+      "ua": "Мінськ"
+    }
+  },
+  {
+    "name": "Brussels",
+    "locale-name": {
+      "en": "Brussels",
+      "ua": "Брюссель"
+    }
+  },
+  {
+    "name": "Sarajevo",
+    "locale-name": {
+      "en": "Sarajevo",
+      "ua": "Сараєво"
+    }
+  },
+  {
+    "name": "Sofia",
+    "locale-name": {
+      "en": "Sofia",
+      "ua": "Софія"
+    }
+  },
+  {
+    "name": "Zagreb",
+    "locale-name": {
+      "en": "Zagreb",
+      "ua": "Загреб"
+    }
+  },
+  {
+    "name": "Nicosia",
+    "locale-name": {
+      "en": "Nicosia",
+      "ua": "Нікосія"
+    }
+  },
+  {
+    "name": "Prague",
+    "locale-name": {
+      "en": "Prague",
+      "ua": "Прага"
+    }
+  },
+  {
+    "name": "Copenhagen",
+    "locale-name": {
+      "en": "Copenhagen",
+      "ua": "Копенгаген"
+    }
+  },
+  {
+    "name": "Tallinn",
+    "locale-name": {
+      "en": "Tallinn",
+      "ua": "Таллінн"
+    }
+  },
+  {
+    "name": "Paris",
+    "locale-name": {
+      "en": "Paris",
+      "ua": "Париж"
+    }
+  },
+  {
+    "name": "Tbilisi",
+    "locale-name": {
+      "en": "Tbilisi",
+      "ua": "Тбілісі"
+    }
+  },
+  {
+    "name": "Berlin",
+    "locale-name": {
+      "en": "Berlin",
+      "ua": "Берлін"
+    }
+  },
+  {
+    "name": "Athens",
+    "locale-name": {
+      "en": "Athens",
+      "ua": "Афіни"
+    }
+  },
+  {
+    "name": "Budapest",
+    "locale-name": {
+      "en": "Budapest",
+      "ua": "Будапешт"
+    }
+  },
+  {
+    "name": "Reykjavik",
+    "locale-name": {
+      "en": "Reykjavik",
+      "ua": "Рейкʼявік"
+    }
+  },
+  {
+    "name": "Pristina",
+    "locale-name": {
+      "en": "Pristina",
+      "ua": "Пріштине"
+    }
+  },
+  {
+    "name": "Riga",
+    "locale-name": {
+      "en": "Riga",
+      "ua": "Рига"
+    }
+  },
+  {
+    "name": "Vaduz",
+    "locale-name": {
+      "en": "Vaduz",
+      "ua": "Вадуц"
+    }
+  },
+  {
+    "name": "Vilnius",
+    "locale-name": {
+      "en": "Vilnius",
+      "ua": "Вільнюс"
+    }
+  },
+  {
+    "name": "Luxembourg",
+    "locale-name": {
+      "en": "Luxembourg",
+      "ua": "Люксембург"
+    }
+  },
+  {
+    "name": "Valletta",
+    "locale-name": {
+      "en": "Valletta",
+      "ua": "Валлетта"
+    }
+  },
+  {
+    "name": "Chisinau",
+    "locale-name": {
+      "en": "Chisinau",
+      "ua": "Кишинів"
+    }
+  },
+  {
+    "name": "Monaco",
+    "locale-name": {
+      "en": "Monaco",
+      "ua": "Монако"
+    }
+  },
+  {
+    "name": "Podgorica",
+    "locale-name": {
+      "en": "Podgorica",
+      "ua": "Подгориця"
+    }
+  },
+  {
+    "name": "Amsterdam",
+    "locale-name": {
+      "en": "Amsterdam",
+      "ua": "Амстердам"
+    }
+  },
+  {
+    "name": "Skopje",
+    "locale-name": {
+      "en": "Skopje",
+      "ua": "Скопʼє"
+    }
+  },
+  {
+    "name": "Oslo",
+    "locale-name": {
+      "en": "Oslo",
+      "ua": "Осло"
+    }
+  },
+  {
+    "name": "Krakow",
+    "locale-name": {
+      "en": "Krakow",
+      "ua": "Краків"
+    }
+  },
+  {
+    "name": "Lodz",
+    "locale-name": {
+      "en": "Lodz",
+      "ua": "Лодзь"
+    }
+  },
+  {
+    "name": "Wroclaw",
+    "locale-name": {
+      "en": "Wroclaw",
+      "ua": "Вроцлав"
+    }
+  },
+  {
+    "name": "Poznan",
+    "locale-name": {
+      "en": "Poznan",
+      "ua": "Познань"
+    }
+  },
+  {
+    "name": "Gdansk",
+    "locale-name": {
+      "en": "Gdansk",
+      "ua": "Гданськ"
+    }
+  },
+  {
+    "name": "Szczecin",
+    "locale-name": {
+      "en": "Szczecin",
+      "ua": "Щецин"
+    }
+  },
+  {
+    "name": "Bydgoszcz",
+    "locale-name": {
+      "en": "Bydgoszcz",
+      "ua": "Бидґощ"
+    }
+  },
+  {
+    "name": "Lublin",
+    "locale-name": {
+      "en": "Lublin",
+      "ua": "Люблін"
+    }
+  },
+  {
+    "name": "Bialystok",
+    "locale-name": {
+      "en": "Bialystok",
+      "ua": "Білосток"
+    }
+  },
+  {
+    "name": "Katowice",
+    "locale-name": {
+      "en": "Katowice",
+      "ua": "Катовіце"
+    }
+  },
+  {
+    "name": "Rzeszow",
+    "locale-name": {
+      "en": "Rzeszow",
+      "ua": "Жешув"
+    }
+  },
+  {
+    "name": "Olsztyn",
+    "locale-name": {
+      "en": "Olsztyn",
+      "ua": "Ольштин"
+    }
+  },
+  {
+    "name": "Kielce",
+    "locale-name": {
+      "en": "Kielce",
+      "ua": "Кельце"
+    }
+  },
+  {
+    "name": "Zielona Gora",
+    "locale-name": {
+      "en": "Zielona Gora",
+      "ua": "Зелена Гура"
+    }
+  },
+  {
+    "name": "Opole",
+    "locale-name": {
+      "en": "Opole",
+      "ua": "Ополе"
+    }
+  },
+  {
+    "name": "Lisbon",
+    "locale-name": {
+      "en": "Lisbon",
+      "ua": "Лісабон"
+    }
+  },
+  {
+    "name": "Bucharest",
+    "locale-name": {
+      "en": "Bucharest",
+      "ua": "Бухарест"
+    }
+  },
+  {
+    "name": "San Marino",
+    "locale-name": {
+      "en": "San Marino",
+      "ua": "Сан-Марино"
+    }
+  },
+  {
+    "name": "Belgrade",
+    "locale-name": {
+      "en": "Belgrade",
+      "ua": "Белград"
+    }
+  },
+  {
+    "name": "Bratislava",
+    "locale-name": {
+      "en": "Bratislava",
+      "ua": "Братислава"
+    }
+  },
+  {
+    "name": "Ljubljana",
+    "locale-name": {
+      "en": "Ljubljana",
+      "ua": "Любляна"
+    }
+  },
+  {
+    "name": "Madrid",
+    "locale-name": {
+      "en": "Madrid",
+      "ua": "Мадрид"
+    }
+  },
+  {
+    "name": "Stockholm",
+    "locale-name": {
+      "en": "Stockholm",
+      "ua": "Стокгольм"
+    }
+  },
+  {
+    "name": "Bern",
+    "locale-name": {
+      "en": "Bern",
+      "ua": "Берн"
+    }
+  },
+  {
+    "name": "Ankara",
+    "locale-name": {
+      "en": "Ankara",
+      "ua": "Анкара"
+    }
+  },
+  {
+    "name": "Kyiv",
+    "locale-name": {
+      "en": "Kyiv",
+      "ua": "Київ"
+    }
+  },
+  {
+    "name": "Vinnytsia",
+    "locale-name": {
+      "en": "Vinnytsia",
+      "ua": "Вінниця"
+    }
+  },
+  {
+    "name": "Lutsk",
+    "locale-name": {
+      "en": "Lutsk",
+      "ua": "Луцьк"
+    }
+  },
+  {
+    "name": "Dnipro",
+    "locale-name": {
+      "en": "Dnipro",
+      "ua": "Дніпро"
+    }
+  },
+  {
+    "name": "Donetsk",
+    "locale-name": {
+      "en": "Donetsk",
+      "ua": "Донецьк"
+    }
+  },
+  {
+    "name": "Zhytomyr",
+    "locale-name": {
+      "en": "Zhytomyr",
+      "ua": "Житомир"
+    }
+  },
+  {
+    "name": "Uzhhorod",
+    "locale-name": {
+      "en": "Uzhhorod",
+      "ua": "Ужгород"
+    }
+  },
+  {
+    "name": "Zaporizhzhia",
+    "locale-name": {
+      "en": "Zaporizhzhia",
+      "ua": "Запоріжжя"
+    }
+  },
+  {
+    "name": "Ivano-Frankivsk",
+    "locale-name": {
+      "en": "Ivano-Frankivsk",
+      "ua": "Івано-Франківськ"
+    }
+  },
+  {
+    "name": "Kropyvnytskyi",
+    "locale-name": {
+      "en": "Kropyvnytskyi",
+      "ua": "Кропивницький"
+    }
+  },
+  {
+    "name": "Luhansk",
+    "locale-name": {
+      "en": "Luhansk",
+      "ua": "Луганськ"
+    }
+  },
+  {
+    "name": "Lviv",
+    "locale-name": {
+      "en": "Lviv",
+      "ua": "Львів"
+    }
+  },
+  {
+    "name": "Mykolaiv",
+    "locale-name": {
+      "en": "Mykolaiv",
+      "ua": "Миколаїв"
+    }
+  },
+  {
+    "name": "Odessa",
+    "locale-name": {
+      "en": "Odessa",
+      "ua": "Одеса"
+    }
+  },
+  {
+    "name": "Poltava",
+    "locale-name": {
+      "en": "Poltava",
+      "ua": "Полтава"
+    }
+  },
+  {
+    "name": "Rivne",
+    "locale-name": {
+      "en": "Rivne",
+      "ua": "Рівне"
+    }
+  },
+  {
+    "name": "Sumy",
+    "locale-name": {
+      "en": "Sumy",
+      "ua": "Суми"
+    }
+  },
+  {
+    "name": "Ternopil",
+    "locale-name": {
+      "en": "Ternopil",
+      "ua": "Тернопіль"
+    }
+  },
+  {
+    "name": "Kharkiv",
+    "locale-name": {
+      "en": "Kharkiv",
+      "ua": "Харків"
+    }
+  },
+  {
+    "name": "Kherson",
+    "locale-name": {
+      "en": "Kherson",
+      "ua": "Херсон"
+    }
+  },
+  {
+    "name": "Khmelnytskyi",
+    "locale-name": {
+      "en": "Khmelnytskyi",
+      "ua": "Хмельницький"
+    }
+  },
+  {
+    "name": "Cherkasy",
+    "locale-name": {
+      "en": "Cherkasy",
+      "ua": "Черкаси"
+    }
+  },
+  {
+    "name": "Chernivtsi",
+    "locale-name": {
+      "en": "Chernivtsi",
+      "ua": "Чернівці"
+    }
+  },
+  {
+    "name": "Chernihiv",
+    "locale-name": {
+      "en": "Chernihiv",
+      "ua": "Чернігів"
+    }
+  },
+  {
+    "name": "London",
+    "locale-name": {
+      "en": "London",
+      "ua": "Лондон"
+    }
+  },
+  {
+    "name": "Vatican City",
+    "locale-name": {
+      "en": "Vatican City",
+      "ua": "Ватикан"
+    }
+  },
+  {
+    "name": "Helsinki",
+    "locale-name": {
+      "en": "Helsinki",
+      "ua": "Гельсінкі"
+    }
+  },
+  {
+    "name": "Dublin",
+    "locale-name": {
+      "en": "Dublin",
+      "ua": "Дублін"
+    }
+  },
+  {
+    "name": "Rome",
+    "locale-name": {
+      "en": "Rome",
+      "ua": "Рим"
+    }
+  },
+  {
+    "name": "Astana",
+    "locale-name": {
+      "en": "Astana",
+      "ua": "Астана"
+    }
+  }
+]

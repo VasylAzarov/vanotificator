@@ -2,7 +2,7 @@ package com.example.vanotificator.service;
 
 import com.example.vanotificator.dto.ForecastDto;
 import com.example.vanotificator.dto.WeatherResponseDto;
-import com.example.vanotificator.events.CitiesInitializedEvent;
+import com.example.vanotificator.event.CitiesInitializedEvent;
 import com.example.vanotificator.exeption.ForecastNotFoundException;
 import com.example.vanotificator.mapper.ForecastMapper;
 import com.example.vanotificator.model.City;
@@ -13,7 +13,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
 import org.springframework.data.domain.PageRequest;
-import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.time.*;
@@ -45,7 +44,6 @@ public class ForecastService {
         this.requestService = requestService;
     }
 
-    @Async
     @EventListener
     public void onCitiesInitialized(CitiesInitializedEvent event) {
         log.info("Start updating forecasts for cities...");

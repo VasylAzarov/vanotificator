@@ -26,4 +26,7 @@ public class City {
 
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Forecast> forecasts = new ArrayList<>();
+
+    @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<CityLocaleName> localNames = new ArrayList<>();
 }

@@ -2,7 +2,7 @@ package com.example.vanotificator.service;
 
 import com.example.vanotificator.dto.CityCreateDto;
 import com.example.vanotificator.dto.CityDto;
-import com.example.vanotificator.events.CitiesInitializedEvent;
+import com.example.vanotificator.event.CitiesInitializedEvent;
 import com.example.vanotificator.exeption.CityAlreadyExistsException;
 import com.example.vanotificator.exeption.CityNotFoundException;
 import com.example.vanotificator.mapper.CityMapper;
@@ -30,20 +30,20 @@ public class CityService {
 
     private static final Logger log = LoggerFactory.getLogger(CityService.class);
 
-    private final CityReaderService cityReaderService;
+    private final FileReaderService fileReaderService;
     private final CityRepository cityRepository;
     private final CityMapper cityMapper;
     private final ApplicationEventPublisher publisher;
     private final CityNameNormalizer normalizer;
 
     public CityService(
-            CityReaderService cityReaderService,
+            FileReaderService fileReaderService,
             CityRepository cityRepository,
             CityMapper cityMapper,
             ApplicationEventPublisher publisher,
             CityNameNormalizer normalizer
     ) {
-        this.cityReaderService = cityReaderService;
+        this.fileReaderService = fileReaderService;
         this.cityRepository = cityRepository;
         this.cityMapper = cityMapper;
         this.publisher = publisher;
@@ -108,7 +108,7 @@ public class CityService {
         return cityMapper.toDto(cityRepository.save(city));
     }
 
-    public List<City> getCityEntityByNamesIn(Collection<String> cityNames) {
+    public List<City> getCityEntityByNamesIn(List<String> cityNames) {
         if (cityNames == null || cityNames.isEmpty()) {
             return List.of();
         }
@@ -130,7 +130,7 @@ public class CityService {
     }
 
     private void updateCitiesFromFile() {
-        List<CityCreateDto> dtos = cityReaderService.readCityFromFile();
+        List<CityCreateDto> dtos = fileReaderService.readCityFromFile();
 
         Set<String> existing = new HashSet<>(cityRepository.findAllCityNames());
 

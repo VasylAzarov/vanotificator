@@ -1,0 +1,39 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5
+      author: you
+      changes:
+        - createSequence:
+            sequenceName: city_local_name_seq
+            startValue: 1
+            incrementBy: 50
+        - createTable:
+            tableName: city_locale_name
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  defaultValueSequenceNext: city_local_name_seq
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: city_id
+                  type: BIGINT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: locale
+                  type: VARCHAR(10)
+                  constraints:
+                    nullable: false
+              - column:
+                  name: locale_name
+                  type: VARCHAR(255)
+                  constraints:
+                    nullable: false
+        - addForeignKeyConstraint:
+            baseTableName: city_locale_name
+            baseColumnNames: city_id
+            referencedTableName: city
+            referencedColumnNames: id
+            constraintName: fk_city_locale_name_city

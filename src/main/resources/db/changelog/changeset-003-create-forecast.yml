@@ -4,7 +4,7 @@ databaseChangeLog:
       author: you
       changes:
         - createSequence:
-            sequenceName: coordinates_seq
+            sequenceName: forecast_seq
             startValue: 1
             incrementBy: 50
         - createTable:
@@ -13,7 +13,7 @@ databaseChangeLog:
               - column:
                   name: id
                   type: BIGINT
-                  autoIncrement: true
+                  defaultValueSequenceNext: forecast_seq
                   constraints:
                     primaryKey: true
               - column:
@@ -33,22 +33,22 @@ databaseChangeLog:
                     nullable: false
               - column:
                   name: temperature
-                  type: DOUBLE
+                  type: DOUBLE PRECISION
                   constraints:
                     nullable: false
               - column:
                   name: precipitation
-                  type: DOUBLE
+                  type: DOUBLE PRECISION
                   constraints:
                     nullable: false
               - column:
                   name: pop
-                  type: DOUBLE
+                  type: DOUBLE PRECISION
                   constraints:
                     nullable: false
               - column:
                   name: wind_speed
-                  type: DOUBLE
+                  type: DOUBLE PRECISION
                   constraints:
                     nullable: false
               - column:

@@ -1,4 +1,4 @@
-package com.example.vanotificator.events;
+package com.example.vanotificator.event;
 
 import org.springframework.context.ApplicationEvent;
 

@@ -7,3 +7,5 @@ databaseChangeLog:
       file: db/changelog/changeset-003-create-forecast.yml
   - include:
       file: db/changelog/changeset-004-create-telegram-user.yml
+  - include:
+      file: db/changelog/changeset-005-create-city-locale.yml
